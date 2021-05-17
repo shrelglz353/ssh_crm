@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="OFF" monitorInterval="600">
+	<!--  status 代表日志的日志-->
+    <!--日志级别：TRACE < DEBUG < INFO < WARN < ERROR < FATAL   OFF-->
+    <!--日志级别： 堆 栈               调试                 信息             警告               错误             致命         -->
+    <!--如果设置为WARN，则低于WARN的信息都不会输出-->
+  
+    <Appenders>
+        <!--这个输出控制台的配置-->
+        <Console name="myConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}  [%-5p] [%c  %l] %m%n"/>
+        </Console>
+        
+        
+        <File name="mylogfile" fileName="log/log.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}  [%-5p] [%c  %l] %m%n"/>
+        </File>
+        
+        
+        <RollingFile name="myRollingFile" fileName="logs/app.log"
+        			 filePattern="logs/$${data:yyyy-MM-dd}/app-%d{HH}-%i.log.gz">
+			         <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}  [%-5p] [%c  %l] %m%n"/>
+			         <SizeBasedTriggeringPolicy size="2KB"/>
+        </RollingFile>
+    </Appenders>
+
+
+
+
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <Loggers>
+  
+        <Root level="FATAL">
+            <Appender-Ref ref="myConsole"/>
+            <!-- <Appender-Ref ref="Console"/>
+            
+            <Appender-Ref ref="ERROR"/>
+            <Appender-Ref ref="FATAL"/> -->
+        </Root>
+    </Loggers>
+
+</Configuration>
