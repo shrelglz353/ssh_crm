@@ -144,4 +144,17 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	
+	<!-- 关于BaseDict的类的配置 -->
+	
+	<bean name="baseDictAction" class="com.jz.web.action.BaseDictAction" scope="prototype"><!-- 多例 -->
+		<property name="baseDictService" ref="baseDictService"></property>
+	</bean>
+	<bean name="baseDictService" class="com.jz.service.impl.BaseDictServiceImpl">
+		<property name="bdd" ref="baseDictDao"></property>
+	</bean>
+	<bean name="baseDictDao" class="com.jz.dao.impl.BaseDictDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 </beans>

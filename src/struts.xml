@@ -31,13 +31,17 @@
 					此时需要Spring配置手动组装依赖属性
 		
 		 -->
+		<!-- 用户Action -->
 		<action name="UserAction_*" class="userAction" method="{1}">
 			<result name="toHome" type="redirect">/index.htm</result>
 			<result name="error">/login.jsp</result>
 		</action>
 		
+		<!-- 客户Action -->
 		<action name="CustomerAction_*" class="customerAction" method="{1}">
 			<result name="list" >/jsp/customer/list.jsp</result>
 		</action>
+		<!-- 数据字典Action -->
+		<action name="BaseDictAction_*" class="baseDictAction" method="execute"></action>
 	</package>
 </struts>

@@ -7,9 +7,9 @@ public class Customer {
 	  `cust_id` BIGINT(32) NOT NULL AUTO_INCREMENT COMMENT '客户编号(主键)',
 	  `cust_name` VARCHAR(32) NOT NULL COMMENT '客户名称(公司名称)',
 	  `cust_source` VARCHAR(32) DEFAULT NULL COMMENT '客户信息来源',
-	  `cust_industry` VARCHAR(32) DEFAULT NULL COMMENT '客户�?属行�?',
+	  `cust_industry` VARCHAR(32) DEFAULT NULL COMMENT '客户�?属行�?',
 	  `cust_level` VARCHAR(32) DEFAULT NULL COMMENT '客户级别',
-	  `cust_linkman` VARCHAR(64) DEFAULT NULL COMMENT '联系�?',
+	  `cust_linkman` VARCHAR(64) DEFAULT NULL COMMENT '联系�?',
 	  `cust_phone` VARCHAR(64) DEFAULT NULL COMMENT '固定电话',
 	  `cust_mobile` VARCHAR(16) DEFAULT NULL COMMENT '移动电话',
 	  PRIMARY KEY (`cust_id`)
@@ -18,12 +18,18 @@ public class Customer {
 	private Long cust_id;
 	
 	private String cust_name;
-	private String cust_source;
-	private String cust_industry;
-	private String cust_level;
+//	private String cust_source;
+//	private String cust_industry; 
+//	private String cust_level;
 	private String cust_linkman;
 	private String cust_phone;
 	private String cust_mobile;
+	
+	private BaseDict cust_source;//客户来源
+	private BaseDict cust_industry;//客户行业
+	private BaseDict cust_level;//客户级别
+	
+	
 	public Long getCust_id() {
 		return cust_id;
 	}
@@ -36,22 +42,23 @@ public class Customer {
 	public void setCust_name(String cust_name) {
 		this.cust_name = cust_name;
 	}
-	public String getCust_source() {
+	
+	public BaseDict getCust_source() {
 		return cust_source;
 	}
-	public void setCust_source(String cust_source) {
+	public void setCust_source(BaseDict cust_source) {
 		this.cust_source = cust_source;
 	}
-	public String getCust_industry() {
+	public BaseDict getCust_industry() {
 		return cust_industry;
 	}
-	public void setCust_industry(String cust_industry) {
+	public void setCust_industry(BaseDict cust_industry) {
 		this.cust_industry = cust_industry;
 	}
-	public String getCust_level() {
+	public BaseDict getCust_level() {
 		return cust_level;
 	}
-	public void setCust_level(String cust_level) {
+	public void setCust_level(BaseDict cust_level) {
 		this.cust_level = cust_level;
 	}
 	public String getCust_linkman() {
