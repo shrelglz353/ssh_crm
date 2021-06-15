@@ -9,6 +9,19 @@
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
 	rel=stylesheet>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/my.js"></script>
+<script type="text/javascript">
+
+  
+$(document).ready(function(){
+	loadSelect("001","level","hhhh","666666");
+});
+
+</script>
+
+
+
 
 
 <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
@@ -56,9 +69,7 @@
 														style="WIDTH: 180px" maxLength=50 name="cust_name">
 								</td>
 								<td>客户级别 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_level">
+								<td id="level">
 								</td>
 							</TR>
 							
